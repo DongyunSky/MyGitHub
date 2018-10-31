@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Android</string>
+
+    <string name="index_welcome_word">欢迎使用我的系统</string>
+
+    <string name="button_text_login">登录</string>
+    <string name="button_text_more">了解更多</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="lawString">《法律条款与隐私政策》</string>
+
 </resources>
