@@ -14,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+
+import fun.chaoxi.alipay.AliPayActivity;
 import fun.chaoxi.viewpager.ActivityViewPager;
 
 public class MainActivity extends AppCompatActivity
@@ -53,6 +55,15 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+        /* 测试阿里支付二维码展示 */
+        Button testAliPay = findViewById(R.id.test_ali_pay);
+        testAliPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AliPayActivity.class));
+            }
+        });
+
     }
 
     @Override
