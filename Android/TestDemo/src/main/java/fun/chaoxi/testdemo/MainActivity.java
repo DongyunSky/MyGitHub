@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import fun.chaoxi.PageIndicatorView.PageIndicatorViewActivity;
 import fun.chaoxi.alipay.AliPayActivity;
 import fun.chaoxi.viewpager.ActivityViewPager;
 
@@ -61,6 +62,14 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, AliPayActivity.class));
+            }
+        });
+        /**/
+        Button testPageIndicatorView = findViewById(R.id.test_page_indicator_view);
+        testPageIndicatorView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, PageIndicatorViewActivity.class));
             }
         });
 

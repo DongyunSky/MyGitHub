@@ -25,6 +25,8 @@
         <activity android:name="fun.chaoxi.viewpager.ActivityViewPager"/>
         <!-- AliPay -->
         <activity android:name="fun.chaoxi.alipay.AliPayActivity"/>
+        <!-- PageIndicatorView -->
+        <activity android:name="fun.chaoxi.PageIndicatorView.PageIndicatorViewActivity"/>
     </application>
 
 </manifest>
