@@ -1,6 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <!--首页任务列表-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider" />
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:id="@+id/pointLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@color/black" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#ff362b53" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#ff9d8cc1" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#ff9d8cc1" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#ff9d8cc1" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#ff362b53" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/distanceLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/endLayout"
+            android:layout_toRightOf="@id/pointLayout"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="起始"
+                        android:textColor="#ffababaa"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/startTimeTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(2018年10月1日)"
+                        android:textColor="#ffababaa"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/startLocationTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxEms="18"
+                    android:singleLine="true"
+                    android:textColor="#ff3f3e3f"
+                    android:textSize="12sp"
+                    tools:text="杭州西湖2区建军路12号123-18" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="终点"
+                    android:textColor="#ffababaa"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/endLocationTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxEms="18"
+                    android:singleLine="true"
+                    android:textColor="#ff3f3e3f"
+                    android:textSize="12sp"
+                    tools:text="杭州滨江区52号6374-8498" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/endLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="end"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/lookDetailTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:text="查看详情"
+                android:textColor="#A08CC1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/statusTv"
+                android:text="责任司机 | 服务中"
+                android:layout_marginTop="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#A08CC1"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

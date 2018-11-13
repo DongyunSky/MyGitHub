@@ -1,6 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.home.HomeView"
+    android:background="@color/colorWhite"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.amap.api.maps.MapView
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <!-- 定位按钮 -->
+            <ImageView
+                android:id="@+id/toMyLocation"
+                android:background="@color/black"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="80dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <!-- 收车按钮 -->
+            <RelativeLayout
+                android:id="@+id/finishAllTask"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="80dp"
+                android:layout_marginLeft="20dp"
+                android:background="@color/colorToolbarBg"
+                android:layout_marginStart="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="6dp"
+                    android:text="结束任务"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/behaviorLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:behavior_hideable="false"
+            app:behavior_peekHeight="65dp"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+            <RelativeLayout
+                android:id="@+id/bottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorWhite"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/informImg"
+                    android:background="@color/black"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/flagTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/informImg"
+                    android:text="当前任务:"
+                    android:textColor="#5B77BA"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/currentTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/routeLayout"
+                    android:layout_toRightOf="@id/flagTv"
+                    android:gravity="start|center_vertical"
+                    android:text="--"
+                    android:textColor="#5B77BA"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/routeLayout"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/routeStatusTv"
+                        style="@style/thirteenTextWhite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="行程结束" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lookTaskTv"
+                    style="@style/twelveTextWhite"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorCommonBg"
+                    android:gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="查看任务" />
+
+            </RelativeLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <fun.chaoxi.android.common.widget.CustomListView
+                    android:id="@+id/taskListView"
+                    android:divider="@null"
+                    tools:listitem="@layout/item_task_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </fun.chaoxi.android.common.widget.CustomListView>
+            </android.support.v4.widget.NestedScrollView>
+
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>

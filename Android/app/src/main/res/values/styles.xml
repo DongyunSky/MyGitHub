@@ -3,9 +3,6 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="dialog_transparent">
@@ -14,6 +11,79 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <!--16号标题颜色字体-->
+    <style name="SixteenTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTitle</item>
+    </style>
+    <!--16号黑色字体-->
+    <style name="SixteenTextBlack">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <!--18号标题颜色字体-->
+    <style name="eighteenTitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorTitle</item>
+    </style>
+
+    <!--14号黑色字体-->
+    <style name="fourteenTextBlack">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
+    </style>
+    <!--14号白色字体-->
+    <style name="fourteenTextWhite">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <!--14号灰色字体-->
+    <style name="fourteenTextGray">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#8E8E8E</item>
+    </style>
+    <!--13号白色字体-->
+    <style name="thirteenTextWhite">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <!--12号白色字体-->
+    <style name="twelveTextWhite">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <!--16号白色字体-->
+    <style name="sixteenTextWhite">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <!--16号黑色字体-->
+    <style name="sixteenTextBlack">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
+    </style>
+
+    <!--12号黑色字体-->
+    <style name="twelveTextBlack">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
+    </style>
+    <!--12号灰色字体-->
+    <style name="twelveTextGray">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorTextGray</item>
+    </style>
+    <!--9号浅灰色字体-->
+    <style name="nineTextGray">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">@color/colorTextLightGray</item>
+    </style>
+    <!--10号浅灰色字体-->
+    <style name="tenTextGray">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/colorTextLightGray</item>
     </style>
 
 </resources>

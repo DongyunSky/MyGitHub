@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
 
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorLightWhite">#F5F5F5</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorToolbarBg">#253F4B</color>
+    <!--标题颜色-->
+    <color name="colorTitle">#6CC4BA</color>
+    <!--登录颜色-->
+    <color name="colorLogin">#42B9A9</color>
+    <color name="colorGray">#CDCDCD</color>
+    <color name="colorDivider">#DCDCDC</color>
+    <color name="colorTextBlack">#3F3E3F</color>
+    <color name="colorTextGray">#646464</color>
+    <color name="colorTextLightGray">#767778</color>
     <color name="colorLaw">#FF9001</color>
+    <!--消息中心未读消息状态-->
+    <color name="colorUnread">#F8B551</color>
+    <!--消息列表，订单列表等背景色-->
+    <color name="colorCommonBg">#f5f9fd</color>
+    <color name="colorOffline">#eeeeed</color>
 </resources>

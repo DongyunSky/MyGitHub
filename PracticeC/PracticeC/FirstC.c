@@ -2,6 +2,37 @@
 #include <math.h>
 int main()
 {
+
+    /* 输入学号，输出该生的入学年份、学院代码、班级座号。 */
+    int year, code, number;
+    printf("请输入学号：");
+    scanf_s("%3d%4d%*2d%3d", &code, &year, &number);
+    printf("入学年份：%d\n学院代码：%d\n班级座号：%03d", year, code, number);
+    printf("\n");
+
+
+    /* 根据用户输入的时间，输出不同的问候语 */
+    int hour, minute;
+    printf("请输入当前时间(格式：时:分)：");
+    scanf_s("%d:%d", &hour, &minute);
+    if (hour >= 6 && hour < 12) {
+        printf("上午好");
+    }
+    else if (hour >= 12 && hour < 18) {
+        printf("下午好");
+    }
+    else
+    {
+        printf("晚上好");
+    }
+
+    printf("\n");
+    
+
+    int x = 10;
+    int t = x && x > 10;
+    printf("%d", t);
+
     // 华氏温度转摄氏温度
     int f = 0;
     float c = 0;
