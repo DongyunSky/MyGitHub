@@ -1,3 +1,0 @@
-﻿  FirstC.c
-e:\root\source\git\mygithub\practicec\practicec\firstc.c(41): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-  PracticeC.vcxproj -> E:\root\source\git\MyGitHub\PracticeC\Debug\PracticeC.exe

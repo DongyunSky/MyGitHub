@@ -2,6 +2,43 @@
 #include <math.h>
 int main()
 {
+    /* 某商场清仓，商品打折销售，现需要编一个新的程序：按清仓价格计算出客户应支付的商品金额。 */
+    int w, c;
+    float price;
+    scanf_s("%d%d", &w, &c);
+    if (w <= 1000 && w>0) {
+        int i = w / 200;
+        if (c == 1)
+            price = (i + 1) * 4.5;
+        if (c == 2)
+            price = (i + 1) * 7;
+    }
+    else if (w > 1000) {
+        int i = (w - 1000) / 300;
+        if (c == 1)
+            price = (i + 1) * 6;
+        if (c == 2)
+            price = (i + 1) * 8.5;
+        price += 35;
+    }
+    printf("%.2f", price);
+
+    /* 编写程序，输入x，根据分段函数的定义计算y，并输出y的值 */
+    double x, y;
+    scanf_s("%lf", &x);
+    if (x <= -1) {
+        y = 2 * x*x*x - 1;
+    }
+    else if (x > -1 && x <= 0) {
+        y = x * x;
+    }
+    else if (x > 0 && x <= 1) {
+        y = sqrt(x);
+    }
+    else if (x > 1) {
+        y = 3 * x + 2;
+    }
+    printf("%f", y);
 
     /* 输入学号，输出该生的入学年份、学院代码、班级座号。 */
     int year, code, number;
