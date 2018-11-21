@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/update_app_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="更新APP"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="109dp" />
+</LinearLayout>

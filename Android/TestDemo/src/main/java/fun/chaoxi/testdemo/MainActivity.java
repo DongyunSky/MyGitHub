@@ -17,6 +17,7 @@ import android.widget.Button;
 
 import fun.chaoxi.PageIndicatorView.PageIndicatorViewActivity;
 import fun.chaoxi.alipay.AliPayActivity;
+import fun.chaoxi.fileprovider.ProviderActivity;
 import fun.chaoxi.viewpager.ActivityViewPager;
 
 public class MainActivity extends AppCompatActivity
@@ -64,12 +65,19 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this, AliPayActivity.class));
             }
         });
-        /**/
+        /* 测试点点点 */
         Button testPageIndicatorView = findViewById(R.id.test_page_indicator_view);
         testPageIndicatorView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, PageIndicatorViewActivity.class));
+            }
+        });
+        /* 测试调用系统安装程序安装APP */
+        ((Button) findViewById(R.id.test_provider_btn)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProviderActivity.class));
             }
         });
 
