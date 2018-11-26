@@ -3,6 +3,80 @@
 int main()
 {
 
+    /* 九九 */
+    for (int i = 1; i < 10; i++)
+    {
+        for (int j = 1; j < i + 1; j++)
+        {
+            printf("%d*%d=%d  ", i, j, i*j);
+        }
+        printf("\n");
+    }
+
+    /* 有30个人，在一家饭馆里吃饭共花了50先令，每个男人各花3先令，每个女人各花2先令，每个小孩各花1先令，
+    问男人、女人和小孩各有几人？(男人、女人和小孩都至少有1人) */
+    for (int i = 1; i < 30; i++)
+    {
+        for (int j = 1; j < 30; j++)
+        {
+            for (int k = 1; k < 30; k++)
+            {
+                if ((3 * i + 2 * j + 1 * k) == 50 && i + j + k == 30) {
+                    printf("男人：%d；女人：%d；小孩：%d。\n", i, j, k);
+                }
+            }
+        }
+    }
+
+    /* 某珠宝鉴定大赛，由主持人输入珠宝的真实价格，再由8位参赛选手输入各自估计的价格，估价与真实价格最接近的选手获胜。 */
+    float realPrice, mini, price;
+    int num = 1;
+    printf("请输入真实价格（单位：万）");
+    scanf_s("%f", &realPrice);
+    printf("请选手输入估计的价格（单位：万）");
+    scanf_s("%f", &mini);
+    for (int i = 0; i < 7; i++)
+    {
+        scanf_s("%f", &price);
+        if (fabs(realPrice - price) < fabs(realPrice - mini))
+        {
+            mini = price;
+            num = i + 2;
+        }
+    }
+    printf("%d号选手获胜，最接近的估价是：%.1f", num, mini);
+
+
+
+    /* 输入一个整数n，输出由n行上三角形与n+1行下三角形组成的如下菱形。 */
+    int n;
+    scanf_s("%d", &n);
+    for (int i = 0; i < n + 1; i++)
+    {
+        for (int j = i; j < n; j++)
+        {
+            printf(" ");
+        }
+        for (int k = n - i; k < n + 1 + i; k++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+    for (int i = n - 1; i >= 0; i--)
+    {
+        for (int j = i; j < n; j++)
+        {
+            printf(" ");
+        }
+        for (int k = n - i; k < n + 1 + i; k++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+
     /* 计算s=1+1/2+1/3+1/4+......+1/200的值并输出（保留4位小数），正确结果为5.8780 */
     float s = 0.0, a = 1.0;
     for (int i = 1; i < 201; i++)
