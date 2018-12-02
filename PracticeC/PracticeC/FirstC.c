@@ -1,7 +1,58 @@
 #include <stdio.h>
 #include <math.h>
+
+int qshu(int n, int k) {
+    for (int i = 0; i < k - 1; i++) {
+        n = n / 10;
+    }
+    return n % 10;
+}
+
+int f(int x) {
+    return 3 * x*x*x + 2 * x*x + 5 * x + 1;
+}
+
+/* 打印直角三角形 */
+void triangle(int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < 2 * i + 1; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+/* 打印矩形 */
+void rectangle(int n) {
+    for (int i = 0; i < n; i++) {
+        printf("***\n");
+    }
+}
+
 int main()
 {
+
+    /* 按要求调用函数打印图形 */
+    int i, k;
+    printf("请输入行数（大于3）：");
+    scanf_s("%d", &i);
+    printf("请选择图形：1---三角形  \t2---矩形\t3---小旗 ：");
+    scanf_s("%d", &k);
+    // 补充完成题目要求
+    if (k == 1) {
+        triangle(i);
+    }
+    else if (k == 2) {
+        rectangle(i);
+    }
+    else if (k == 3) {
+        triangle(i);
+        rectangle(i);
+    }
+
+    /* 调用函数 */
+    printf("%d\n", qshu(12345, 2));
+    printf("%d\n", f(1) + f(2) + f(12) + f(15) + f(25));
 
     /* 九九 */
     for (int i = 1; i < 10; i++)
