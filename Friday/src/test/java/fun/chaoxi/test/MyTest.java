@@ -1,5 +1,9 @@
 package fun.chaoxi.test;
 
+import fun.chaoxi.bet.Gambler;
+import fun.chaoxi.bet.TestBet;
+import fun.chaoxi.list.DoubleLinkedList;
+import fun.chaoxi.list.LinkList;
 import fun.chaoxi.list.MySequenceList;
 import fun.chaoxi.list.SequenceList;
 import fun.chaoxi.sort.MySort;
@@ -7,12 +11,177 @@ import fun.chaoxi.sort.SelectionSort;
 import fun.chaoxi.util.SortUtils;
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Random;
 
 public class MyTest {
 
     MySort mySort;
     Random random = new Random();
+
+    @Test
+    public void testBet1() {
+        long count = 0;
+        for (int i = 0; i < 10000; i++) {
+            if ("King".endsWith(TestBet.doBet(100000, 100, 0.500000001))) {
+                count++;
+            }
+        }
+        System.out.println("\n赌场最终赢了" + count + "次!");
+    }
+
+    @Test
+    public void testBet() {
+        Gambler king = new Gambler("King", 2147483647);
+        Gambler luRen = new Gambler("LuRen", 100000);
+        int count = 0;
+        // 赌到有人没钱
+        try {
+            for (;;) {
+                TestBet.bet(king, luRen, 0.5);
+                count++;
+            }
+            // System.out.println("\n" + king + "\n" + luRen);
+        } catch (Exception e) {
+            System.out.println("\n" + "count: " + count + "\n" + king + "\n" + luRen);
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testA() {
+        int n=10,m=3,s=0;
+        for(int i=1;i<=n;i++)
+            s=(s+m)%i;
+        System.out.println(s%n+1);
+    }
+
+    @Test
+    public void testDoubleLinkedList() {
+        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
+        doubleLinkedList.initList();
+        for (int i = 0; i < 39; i++) {
+            doubleLinkedList.insertList(i+1+"", i+1);
+        }
+        doubleLinkedList.print();
+
+        int count = 0;
+        while (true) {
+
+        }
+    }
+
+    @Test
+    public void testMonitor() {
+        new LinkList().getMonitor(39);
+    }
+
+    @Test
+    public void testLinkedList() {
+        LinkedList<String> stringList = new LinkedList<>();
+        for (int i = 0; i < 39; i++) {
+            stringList.add(i+1+"");
+        }
+
+        int count = 1;
+
+        ListIterator<String> iterator = stringList.listIterator();
+        int size = stringList.size();
+        while (iterator.hasNext() && stringList.size()>2) {
+            iterator.next();
+            if (count%3 ==0) {
+                iterator.remove();
+            }
+            if (count == size) {
+                iterator = stringList.listIterator();
+                size = stringList.size();
+                count = 1;
+            }
+            count++;
+        }
+        for (String s : stringList) {
+            System.out.println(s);
+        }
+    }
+
+    @Test
+    public void testLinkList() {
+
+        int a = 0;
+        int b = 0;
+
+        LinkList.CycleLinkList cycleLinkList = new LinkList.CycleLinkList(new LinkList.Node(0, null, null));
+        cycleLinkList.printAll();
+
+        for (int i = 0; i < 39; i++) {
+            cycleLinkList.addNodeAtTail(new LinkList.Node(i+1, null, null));
+        }
+        cycleLinkList.printAll();
+
+        // 循环链表
+        cycleLinkList.getTailNode().setNext(cycleLinkList.getNode().getNext());
+
+        LinkList.Node currentNode = cycleLinkList.getNode().getNext();
+        int count = 1;
+        while (!currentNode.getNext().equals(currentNode)) {
+            if (count == 3) {
+                if (currentNode.equals(currentNode.getNext().getNext())){
+                    b = currentNode.getElement();
+                    break;
+                } else {
+                    b = currentNode.getElement();
+                    currentNode = cycleLinkList.removeAndGetNextNode(currentNode.getElement());
+                }
+                count = 1;
+            } else {
+                count++;
+                currentNode = currentNode.getNext();
+            }
+        }
+
+        a = currentNode.getElement();
+        System.out.println("班长：" + a);
+        System.out.println("副班长：" + b);
+
+        // cycleLinkList.printAll();
+
+        int person = random.nextInt(1000);
+        int m = random.nextInt(100);
+        System.out.println(person + "个人，" + "数到" + m + "的人退出！");
+
+        LinkList.CycleLinkList list = new LinkList.CycleLinkList(new LinkList.Node(0, null, null));
+        for (int i = 0; i < person; i++) {
+            list.addNodeAtTail(new LinkList.Node(i+1, null, null));
+        }
+        LinkList.Node firstNode = list.getNode().getNext();
+        LinkList.Node tailNode = list.getTailNode();
+        tailNode.setNext(firstNode);
+
+        count = 1;
+        currentNode = firstNode;
+        while (!currentNode.getNext().equals(currentNode)) {
+            if (count == m) {
+                list.removeElement(currentNode.getElement());
+                if (currentNode.getElement() == firstNode.getElement()) {
+                    if (currentNode.equals(currentNode.getNext().getNext())){
+                        break;
+                    } else {
+                        currentNode = firstNode.getNext();
+                    }
+                } else {
+                    currentNode = firstNode;
+                }
+                count = 1;
+            } else {
+                count++;
+                currentNode = currentNode.getNext();
+            }
+        }
+
+        System.out.println("中奖的人是" + list.getNode().getNext().getElement() + "号!");
+
+    }
 
     @Test
     public void testMySequence() {
