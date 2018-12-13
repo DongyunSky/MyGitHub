@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <time.h>
 
 int qshu(int n, int k) {
     for (int i = 0; i < k - 1; i++) {
@@ -29,8 +30,48 @@ void rectangle(int n) {
     }
 }
 
+int count; // 猜中的次数
+int guess() {
+    int magic; //magic用于保存随机数
+    srand(time(0));	//用系统时间初始化随机函数
+    magic = rand() % 10 + 1; //产生一个1到10的随机整数
+    //请完善函数的功能
+    count = 0;
+    int i;
+    do{
+        scanf_s("%d", &i);
+        count++;
+        if (i > magic) {
+            printf("猜大了！\n");
+        }
+        else if (i < magic) {
+            printf("猜小了！\n");
+        }
+        else {
+            printf("你猜对了！是%d，共猜了%d次。\n", magic, count);
+            break;
+        }
+    } while (i != magic);
+    return magic; // return 猜中的数
+}
+
 int main()
 {
+    /* 猜数游戏 */
+    printf("请甲开始猜数\n");
+    int a = guess();
+    int countA = count;
+    printf("请乙开始猜数\n");
+    int b = guess();
+    int countB = count;
+    
+    if (countA == countB) {
+        printf("平局\n");
+    } else if (countA > countB) {
+        printf("乙获胜\n");
+    } else {
+        printf("甲获胜\n");
+    }
 
     /* 按要求调用函数打印图形 */
     int i, k;
@@ -269,8 +310,6 @@ int main()
     // printf("您输入的整数是：%d；您输入的小数是：%f",a,b);
     printf("较大的数是：%f\n" , ((a + b + fabs(a - b)) / 2) );
     printf("平方根是：%f\n" , sqrt(((a + b + fabs(a - b)) / 2)));
-
-
 
 
 
