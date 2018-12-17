@@ -2,10 +2,7 @@ package fun.chaoxi.test;
 
 import fun.chaoxi.bet.Gambler;
 import fun.chaoxi.bet.TestBet;
-import fun.chaoxi.list.DoubleLinkedList;
-import fun.chaoxi.list.LinkList;
-import fun.chaoxi.list.MySequenceList;
-import fun.chaoxi.list.SequenceList;
+import fun.chaoxi.list.*;
 import fun.chaoxi.sort.MySort;
 import fun.chaoxi.sort.SelectionSort;
 import fun.chaoxi.util.SortUtils;
@@ -19,6 +16,23 @@ public class MyTest {
 
     MySort mySort;
     Random random = new Random();
+
+    @Test
+    public void testDCLL1() {
+        int i = DoubleCircularLinkedList.test2(11, 10);
+        System.out.println("\n" + (i+1));
+    }
+
+    @Test
+    public void testDCLL() {
+        DoubleCircularLinkedList list = new DoubleCircularLinkedList();
+        list.initList();
+        for (int i = 0; i < 10; i++) {
+            list.tailAdd(i);
+        }
+        list.removeElement(5).removeElement(2);
+        list.printList();
+    }
 
     @Test
     public void testBet1() {
