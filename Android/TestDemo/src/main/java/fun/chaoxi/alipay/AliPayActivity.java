@@ -2,11 +2,11 @@ package fun.chaoxi.alipay;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.annotation.Nullable;
 import fun.chaoxi.testdemo.R;
 
 /**

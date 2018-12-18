@@ -53,7 +53,7 @@
         <!-- Provider -->
         <activity android:name="fun.chaoxi.fileprovider.ProviderActivity"/>
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="fun.chaoxi.testdemo.fileprovider"
             android:grantUriPermissions="true"
             android:exported="false">

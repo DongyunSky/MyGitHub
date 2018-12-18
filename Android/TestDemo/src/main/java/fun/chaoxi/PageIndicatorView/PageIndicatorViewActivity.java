@@ -3,12 +3,12 @@ package fun.chaoxi.PageIndicatorView;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
 
 import com.rd.PageIndicatorView;
 import com.rd.animation.type.AnimationType;
 
+import androidx.annotation.Nullable;
+import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import fun.chaoxi.testdemo.R;
