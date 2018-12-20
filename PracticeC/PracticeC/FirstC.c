@@ -55,8 +55,60 @@ int guess() {
     return magic; // return 猜中的数
 }
 
-int main()
-{
+int main() {
+
+    /* 编写简单的数字翻译程序 */
+    char c;
+    printf("\t\t\t翻译程序\n1-5 --- 数字转英文\t\t\te --- 结束程序\n");
+    do {
+        c = getchar();
+        // scanf_s("%c", &c);
+        if (c == '1') {
+            printf("one\n");
+        } else if (c == '2') {
+            printf("two\n");
+        }
+        else if (c == '3') {
+            printf("three\n");
+        }
+        else if (c == '4') {
+            printf("four\n");
+        }
+        else if (c == '5') {
+            printf("five\n");
+        }
+    } while (c != 'e');
+
+    /* 编写程序，判断一个英文句子的首字母是否为元音字母，并统计句子中元音字母（a、e、i、o、u）的个数。 */
+    char c;
+    int flag = 0, vowelCount = 0;
+    printf("请输入句子：\n");
+    do {
+        c = getchar();
+
+        // 判断首字母是否为元音字母
+        if (flag == 0) {
+            if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+                flag = 1;
+            } else {
+                flag = -1;
+            }
+        }
+
+        // 统计元音字母个数
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+        {
+            vowelCount++;
+        }
+    } while (c != '.');
+
+    // 打印结果
+    if (flag == 1) {
+        vowelCount++;
+        printf("\n首字母是元音字母。");
+    }
+    printf("\n有%d个元音字母。", vowelCount);
+
     /* 猜数游戏 */
     printf("请甲开始猜数\n");
     int a = guess();
