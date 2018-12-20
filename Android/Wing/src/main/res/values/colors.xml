@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFFFF</color>
+    <color name="colorPrimaryDark">#FF808080</color>
+    <color name="colorAccent">#FFD81B60</color>
+
+    <!-- 通用 -->
+    <color name="black">#ff000000</color>
+    <color name="gray">#808080</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FFFF0000</color>
+    <color name="yellow">#FFFFFF00</color>
+    <color name="blue">#FF0000FF</color>
+
+    <color name="text">#FF727576</color>
+    <color name="link">#FF00b7FF</color>
+
+    <!-- 开始页 -->
+    <color name="skipBtn">#55B6ADAD</color>
+
+    <!-- Home -->
+    <color name="bottom_navigation_background">#FF000000</color>
+</resources>

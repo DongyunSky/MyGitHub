@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 主页面底部导航菜单 -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- 首页资讯 -->
+    <item
+        android:id="@+id/action_main"
+        android:enabled="true"
+        android:icon="@drawable/ic_newspaper_white_24dp"
+        android:title="@string/title_news"
+        app:showAsAction="ifRoom"/>
+    <!-- 收藏 -->
+    <item
+        android:id="@+id/action_favorite"
+        android:enabled="true"
+        android:icon="@drawable/ic_favorite_white_24dp"
+        android:title="@string/title_favorite"
+        app:showAsAction="ifRoom"/>
+    <!-- 添加 -->
+    <item
+        android:id="@+id/action_add"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:title="@string/title_add"
+        app:showAsAction="ifRoom"/>
+    <!-- 实验室 -->
+    <item
+        android:id="@+id/action_lab"
+        android:enabled="true"
+        android:icon="@drawable/ic_lab_white_24dp"
+        android:title="@string/title_lab"
+        app:showAsAction="ifRoom"/>
+    <!-- 用户 -->
+    <item
+        android:id="@+id/action_user"
+        android:enabled="true"
+        android:icon="@drawable/ic_account_circle_white_24dp"
+        android:title="@string/title_user"
+        app:showAsAction="ifRoom"/>
+</menu>

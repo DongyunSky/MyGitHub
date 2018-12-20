@@ -1,0 +1,39 @@
+<resources>
+    <!-- 通用 -->
+    <string name="app_name">Wing</string>
+
+    <!-- 启动页 -->
+    <string name="welcome_word">这是logo</string>
+    <string name="skip">跳过</string>
+
+    <!-- 用户模块 -->
+    <string name="please_type_username">请输入用户名</string>
+    <string name="please_type_password">请输入密码</string>
+    <string name="login_btn">登 录</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="new_user">新用户注册</string>
+    <string name="agree">登录即代表同意</string>
+    <string name="server_item">服务条款</string>
+
+    <!-- Home模块 -->
+    <string name="title_news">资讯</string>
+    <string name="title_favorite">收藏</string>
+    <string name="title_add">添加</string>
+    <string name="title_lab">测试</string>
+    <string name="title_user">账号</string>
+
+    <string name="title_setting">设置</string>
+    <string name="title_share">分享</string>
+
+    <!-- Lab模块 -->
+    <string name="grid_view">网格布局</string>
+    <string name="recycler_grid">Recycler + Grid</string>
+    <string name="test_query_mobile_phone_number_attribution">查询手机号码归属地</string>
+
+    <string name="please_type_the_number">请输入要查询的手机号码</string>
+    <string name="query">查 询</string>
+    <string name="nothing">暂无内容</string>
+    <string name="phone_number">号码：</string>
+    <string name="phone_number_attribution">归属地：</string>
+
+</resources>
