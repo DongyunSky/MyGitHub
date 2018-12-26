@@ -34,6 +34,8 @@
         <activity android:name=".module.lab.GridViewActivity"/>
         <activity android:name=".module.lab.RecyclerGridActivity"/>
         <activity android:name=".module.lab.QueryMobilePhoneNumberAttributionActivity"/>
+        <activity android:name=".module.lab.ding.DingActivity"/>
+        <activity android:name=".module.lab.VirtualLayoutActivity"/>
     </application>
 
 </manifest>

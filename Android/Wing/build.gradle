@@ -74,4 +74,9 @@ dependencies {
     // 简化版 Adapter. MultiType has been rebuilt based on androidx.
     // If you are still using the android support library, please use multitype:3.4.4 and multitype-kotlin:3.4.4.
     implementation 'me.drakeet.multitype:multitype:3.5.0'
+
+    // VirtualLayout
+    implementation ('com.alibaba.android:vlayout:1.2.8@aar') {
+        transitive = true
+    }
 }

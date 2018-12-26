@@ -28,5 +28,19 @@
             android:layout_height="wrap_content"
             android:text="@string/test_query_mobile_phone_number_attribution"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/ding_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_ding"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/test_v_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_v_layout"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

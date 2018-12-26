@@ -1,2 +1,1 @@
-# git
-MyGit
+﻿# gitMyGit## 介绍#### Android个人对安卓的学习测试和练习。#### Friday对Java以及算法数据结构的探究。#### PracticeC学习的C语言的作业和练习。

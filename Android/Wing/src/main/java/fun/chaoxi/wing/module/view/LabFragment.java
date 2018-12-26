@@ -15,6 +15,8 @@ import fun.chaoxi.wing.module.LabContract;
 import fun.chaoxi.wing.module.lab.GridViewActivity;
 import fun.chaoxi.wing.module.lab.QueryMobilePhoneNumberAttributionActivity;
 import fun.chaoxi.wing.module.lab.RecyclerGridActivity;
+import fun.chaoxi.wing.module.lab.VirtualLayoutActivity;
+import fun.chaoxi.wing.module.lab.ding.DingActivity;
 
 /**
  * @author Wing Gao
@@ -56,6 +58,12 @@ public class LabFragment extends Fragment implements LabContract.View, View.OnCl
             case R.id.test_query_mobile_phone_number_attribution :
                 startActivity(new Intent(getActivity(), QueryMobilePhoneNumberAttributionActivity.class));
                 break;
+            case R.id.ding_btn :
+                startActivity(new Intent(getActivity(), DingActivity.class));
+                break;
+            case R.id.test_v_layout :
+                startActivity(new Intent(getActivity(), VirtualLayoutActivity.class));
+                break;
             default:break;
         }
     }
@@ -64,5 +72,7 @@ public class LabFragment extends Fragment implements LabContract.View, View.OnCl
         ((Button) labView.findViewById(R.id.test_grid_view_btn)).setOnClickListener(this);
         ((Button) labView.findViewById(R.id.test_recycler_grid_btn)).setOnClickListener(this);
         ((Button) labView.findViewById(R.id.test_query_mobile_phone_number_attribution)).setOnClickListener(this);
+        ((Button) labView.findViewById(R.id.ding_btn)).setOnClickListener(this);
+        ((Button) labView.findViewById(R.id.test_v_layout)).setOnClickListener(this);
     }
 }

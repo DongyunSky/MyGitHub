@@ -1,1 +1,1 @@
-include ':app', ':TestWeixinAPI', ':TestDemo'
+include ':Wing'
