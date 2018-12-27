@@ -19,8 +19,8 @@ public class MyTest {
 
     @Test
     public void testDCLL1() {
-        int i = DoubleCircularLinkedList.test2(11, 10);
-        System.out.println("\n" + (i+1));
+        int i = DoubleCircularLinkedList.test2(7, 8);
+        System.out.println("\n" + (i));
     }
 
     @Test

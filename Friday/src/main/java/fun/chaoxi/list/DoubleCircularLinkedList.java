@@ -49,7 +49,7 @@ public class DoubleCircularLinkedList {
         int result = -1;
         DoubleCircularLinkedList list = new DoubleCircularLinkedList();
         list.initList();
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n+1; i++) {
             list.tailAdd(i);
         }
         int count = 0;
@@ -62,10 +62,17 @@ public class DoubleCircularLinkedList {
             }
             count++;
             System.out.print(current.element + " ");
+
             if (count % m == 0) {
                 list.removeElement(current.element);
+                System.out.println();
+
                 // 后面的人再从 1 开始  好像是一样的
                 count = 0;
+            }
+            if (current.next == list.head) {
+                // 如果是头结点，进行下一次循环
+                current = current.next;
             }
             current = current.next;
         }
