@@ -55,7 +55,67 @@ int guess() {
     return magic; // return 猜中的数
 }
 
+int a, b, c, d, flag = 100;
+// 获得4个家庭的人数
+int fa[4];
+void getFamNum() {
+    printf("请按序输入4个家庭的人数：\n");
+    scanf_s("%d%d%d%d", &fa[0], &fa[1], &fa[2], &fa[3]);
+}
+
+// 每个房间人数
+int room[19] = { 0,20,4,10,6,10,4,0,0,20,5,3,0,5,8,3,4,3,10 };
+// 判断是否是合适房间
+int getRoom(int index) {
+    int result = -1;
+    for (int i = 0; i < 19; i++) {
+        if (room[i] != 0) {
+            int temp = room[i] - fa[index];
+            if (temp >= 0 && temp <= flag) {
+                flag = temp;
+                result = i;
+            }
+        }
+    }
+    if (result != -1) {
+        room[result] = 0;
+    }
+    flag = 100; // 玛德 最后一秒找到这里没写，太特么刺激了。
+    return result;
+}
+
 int main() {
+    getFamNum();
+    // 判断
+    int i = getRoom(0);
+    int j = getRoom(1);
+    int k = getRoom(2);
+    int l = getRoom(3);
+    if (i == -1) {
+        printf("第1组家庭 没有合适的包厢\n");
+    }
+    else {
+        printf("第1组家庭在%d号包厢就餐\n", i);
+    }
+    if (j == -1) {
+        printf("第2组家庭 没有合适的包厢\n");
+    }
+    else {
+        printf("第2组家庭在%d号包厢就餐\n", j);
+    }
+    if (k == -1) {
+        printf("第3组家庭 没有合适的包厢\n");
+    }
+    else {
+        printf("第3组家庭在%d号包厢就餐\n", k);
+    }
+    if (l == -1) {
+        printf("第4组家庭 没有合适的包厢\n");
+    }
+    else {
+        printf("第4组家庭在%d号包厢就餐\n", l);
+    }
+
 
     /* 编写简单的数字翻译程序 */
     char c;
