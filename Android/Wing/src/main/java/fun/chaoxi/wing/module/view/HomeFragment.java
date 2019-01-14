@@ -15,20 +15,25 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import fun.chaoxi.wing.Constant;
+import fun.chaoxi.wing.KotlinConstantKt;
 import fun.chaoxi.wing.R;
 import fun.chaoxi.wing.module.HomeContract;
 
 /**
  * @author Wing Gao
  * @date 2018/12/18 9:52
- * @description
+ * @description 整个主界面
  */
 public class HomeFragment extends Fragment implements HomeContract.View {
 
     private View homeView;
     private BottomNavigationView bottomNavigationView;
     private Toolbar toolbar;
+
+    private TabNewsFragment newsFragment;
+    private TabFavoriteFragment favoriteFragment;
     private LabFragment labFragment;
+    private UserFragment userFragment;
 
     HomeContract.Presenter homePresenter;
 
@@ -44,7 +49,8 @@ public class HomeFragment extends Fragment implements HomeContract.View {
 
         // TODO
         if (savedInstanceState == null) {
-            showContentFragment(Constant.NEWS_TAB);
+            // showContentFragment(Constant.NEWS_TAB);
+            showContentFragment(KotlinConstantKt.getNEWS_TAB());
         } else {}
 
         return homeView;
@@ -82,9 +88,6 @@ public class HomeFragment extends Fragment implements HomeContract.View {
                     case R.id.action_favorite :
                         showContentFragment(Constant.FAVORITE_TAB);
                         break;
-                    case R.id.action_add :
-                        showContentFragment(Constant.ADD_TAB);
-                        break;
                     case R.id.action_lab :
                         showContentFragment(Constant.LAB_TAB);
                         break;
@@ -104,23 +107,40 @@ public class HomeFragment extends Fragment implements HomeContract.View {
     private void showContentFragment(int index) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         // 如果tab不是null就先隐藏起来
+
+        if (newsFragment != null) {
+            transaction.hide(newsFragment);
+        }
+        if (favoriteFragment != null) {
+            transaction.hide(favoriteFragment);
+        }
         if (labFragment != null) {
             transaction.hide(labFragment);
+        }
+        if (userFragment != null) {
+            transaction.hide(userFragment);
         }
         switch (index) {
             case Constant.NEWS_TAB :
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     toolbar.setTitle(R.string.title_news);
                 }
+                if (newsFragment == null) {
+                    newsFragment = TabNewsFragment.getInstance();
+                    transaction.add(R.id.content, newsFragment, TabNewsFragment.class.getName());
+                } else {
+                    transaction.show(newsFragment);
+                }
                 break;
             case Constant.FAVORITE_TAB :
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     toolbar.setTitle(R.string.title_favorite);
                 }
-                break;
-            case Constant.ADD_TAB :
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    toolbar.setTitle(R.string.title_add);
+                if (favoriteFragment == null) {
+                    favoriteFragment = TabFavoriteFragment.getInstance();
+                    transaction.add(R.id.content, favoriteFragment, TabFavoriteFragment.class.getName());
+                } else {
+                    transaction.show(favoriteFragment);
                 }
                 break;
             case Constant.LAB_TAB :
@@ -137,6 +157,12 @@ public class HomeFragment extends Fragment implements HomeContract.View {
             case Constant.USER_TAB :
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     toolbar.setTitle(R.string.title_user);
+                }
+                if (userFragment == null) {
+                    userFragment = UserFragment.newInstant();
+                    transaction.add(R.id.content, userFragment, UserFragment.class.getName());
+                } else {
+                    transaction.show(userFragment);
                 }
                 break;
             default:break;

@@ -1,5 +1,7 @@
 package fun.chaoxi.wing.module.model.entity;
 
+import javax.inject.Inject;
+
 /**
  * @author Wing Gao
  * @date 2018/12/17 16:01
@@ -11,6 +13,10 @@ public class User {
     private String password;
     private String name;
     private String phone;
+
+    @Inject
+    public User() {
+    }
 
     public String getId() {
         return id;

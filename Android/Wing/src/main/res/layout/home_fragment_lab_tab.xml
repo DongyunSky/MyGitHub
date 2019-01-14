@@ -7,6 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="?attr/actionBarSize"
         android:orientation="vertical">
 
         <Button
@@ -41,6 +42,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/test_v_layout"
+            android:textAllCaps="false" />]
+
+        <Button
+            android:id="@+id/test_kotlin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_kotlin"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/test_bluetooth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_bluetooth"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/test_dagger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_dagger"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/test_rx_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_rx"
             android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

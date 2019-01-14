@@ -16,13 +16,6 @@
         android:icon="@drawable/ic_favorite_white_24dp"
         android:title="@string/title_favorite"
         app:showAsAction="ifRoom"/>
-    <!-- 添加 -->
-    <item
-        android:id="@+id/action_add"
-        android:enabled="true"
-        android:icon="@drawable/ic_add_white_24dp"
-        android:title="@string/title_add"
-        app:showAsAction="ifRoom"/>
     <!-- 实验室 -->
     <item
         android:id="@+id/action_lab"

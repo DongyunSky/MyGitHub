@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-noarg'
+apply plugin: 'kotlin-allopen'
 
 android {
     compileSdkVersion 28
 
-
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
 
     defaultConfig {
         applicationId "fun.chaoxi.wing"
@@ -11,6 +18,7 @@ android {
         targetSdkVersion 28
         versionCode 0
         versionName "0.0.1"
+        multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -25,6 +33,10 @@ android {
 
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -33,7 +45,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.legacy:legacy-support-v13:1.0.0'
     implementation 'androidx.annotation:annotation:1.0.1'
-    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
@@ -41,13 +53,28 @@ dependencies {
 
     implementation 'com.google.android.material:material:1.1.0-alpha02'
     implementation 'com.google.code.gson:gson:2.8.5'
+    // Dagger 依赖注入框架
+    implementation 'com.google.dagger:dagger:2.15'
+    implementation 'com.google.dagger:dagger-android-support:2.15' // if you use the support libraries
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation "org.jetbrains.anko:anko-sdk15:0.9.1"
+
+    // Tangram 动态化构建Native页面的框架，底层用了下面的vlayout。最新版本引入了rxjava，需要自行添加rx依赖
+    implementation 'com.alibaba.android:tangram:2.0.5@aar'
+    // VirtualLayout 阿里开源库，用于复杂布局
+    implementation('com.alibaba.android:vlayout:1.2.8@aar') {
+        transitive = true
+    }
 
     // 调试工具
     debugImplementation 'com.facebook.stetho:stetho:1.5.0'
 
     // butterKnife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
     // retrofit 2
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
@@ -55,6 +82,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     // RxJava 2
     implementation 'io.reactivex.rxjava2:rxjava:2.1.12'
+    implementation "io.reactivex.rxjava2:rxkotlin:2.2.0"
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     // OkHttp 3
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
@@ -75,8 +103,9 @@ dependencies {
     // If you are still using the android support library, please use multitype:3.4.4 and multitype-kotlin:3.4.4.
     implementation 'me.drakeet.multitype:multitype:3.5.0'
 
-    // VirtualLayout
-    implementation ('com.alibaba.android:vlayout:1.2.8@aar') {
-        transitive = true
-    }
+    // 内部更新APP的一个开源库 虽说自己要掌握核心技术 但还是先看一下别人的
+    implementation 'com.qianwen:update-app:3.5.2'
+    implementation 'com.qianwen:okhttp-utils:3.8.0'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
 }

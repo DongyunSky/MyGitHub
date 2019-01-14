@@ -1,6 +1,8 @@
 <resources>
     <!-- 通用 -->
     <string name="app_name">Wing</string>
+    <string name="have_nothing">这里什么都没有呢</string>
+    <string name="get_data">获取数据</string>
 
     <!-- 启动页 -->
     <string name="welcome_word">这是logo</string>
@@ -31,11 +33,20 @@
     <string name="test_query_mobile_phone_number_attribution">查询手机号码归属地</string>
     <string name="test_ding">叮嗒出行</string>
     <string name="test_v_layout">开源库 VLayout</string>
+    <string name="test_kotlin">Kotlin</string>
+    <string name="test_bluetooth">测试蓝牙相关</string>
+    <string name="test_dagger">Dagger</string>
+    <string name="test_rx">测试RxJava</string>
 
     <string name="please_type_the_number">请输入要查询的手机号码</string>
     <string name="query">查 询</string>
     <string name="nothing">暂无内容</string>
     <string name="phone_number">号码：</string>
     <string name="phone_number_attribution">归属地：</string>
+
+    <string name="turn_on_bluetooth">打开蓝牙</string>
+    <string name="turn_off_bluetooth">关闭蓝牙</string>
+    <string name="scan_blu_device">开始扫描</string>
+    <string name="scan_blu_device_finished">扫描结束</string>
 
 </resources>

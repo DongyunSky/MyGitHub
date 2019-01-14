@@ -12,9 +12,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import fun.chaoxi.wing.R;
 import fun.chaoxi.wing.module.LabContract;
+import fun.chaoxi.wing.module.lab.FirstKotlin;
 import fun.chaoxi.wing.module.lab.GridViewActivity;
 import fun.chaoxi.wing.module.lab.QueryMobilePhoneNumberAttributionActivity;
 import fun.chaoxi.wing.module.lab.RecyclerGridActivity;
+import fun.chaoxi.wing.module.lab.TestBluetooth;
+import fun.chaoxi.wing.module.lab.TestDagger;
+import fun.chaoxi.wing.module.lab.TestRxActivity;
 import fun.chaoxi.wing.module.lab.VirtualLayoutActivity;
 import fun.chaoxi.wing.module.lab.ding.DingActivity;
 
@@ -64,6 +68,18 @@ public class LabFragment extends Fragment implements LabContract.View, View.OnCl
             case R.id.test_v_layout :
                 startActivity(new Intent(getActivity(), VirtualLayoutActivity.class));
                 break;
+            case R.id.test_kotlin :
+                startActivity(new Intent(getActivity(), FirstKotlin.class));
+                break;
+            case R.id.test_bluetooth :
+                startActivity(new Intent(getActivity(), TestBluetooth.class));
+                break;
+            case R.id.test_dagger :
+                startActivity(new Intent(getActivity(), TestDagger.class));
+                break;
+            case R.id.test_rx_btn :
+                startActivity(new Intent(getActivity(), TestRxActivity.class));
+                break;
             default:break;
         }
     }
@@ -74,5 +90,9 @@ public class LabFragment extends Fragment implements LabContract.View, View.OnCl
         ((Button) labView.findViewById(R.id.test_query_mobile_phone_number_attribution)).setOnClickListener(this);
         ((Button) labView.findViewById(R.id.ding_btn)).setOnClickListener(this);
         ((Button) labView.findViewById(R.id.test_v_layout)).setOnClickListener(this);
+        ((Button) labView.findViewById(R.id.test_kotlin)).setOnClickListener(this);
+        ((Button) labView.findViewById(R.id.test_bluetooth)).setOnClickListener(this);
+        ((Button) labView.findViewById(R.id.test_dagger)).setOnClickListener(this);
+        ((Button) labView.findViewById(R.id.test_rx_btn)).setOnClickListener(this);
     }
 }
