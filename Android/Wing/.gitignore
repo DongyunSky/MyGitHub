@@ -1,2 +1,4 @@
 /build
+/libs
 /src/main/java/fun/chaoxi/wing/Config.java
+/src/main/java/fun/chaoxi/wing/module/lab/ding
